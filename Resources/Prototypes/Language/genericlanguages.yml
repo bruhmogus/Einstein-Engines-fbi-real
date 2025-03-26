@@ -1,0 +1,61 @@
+# The universal language. This is technically used as a fallback for simulating the pre-languages
+# style of Chat, and is not normally accessible by players.
+- type: language
+  id: Universal
+  obfuscation:
+    !type:ReplacementObfuscation
+    replacement:
+    - "*incomprehensible*" # Never actually used
+
+# Used by Robots.
+# TODO: Replace this with much better languages. Yes, robots can have languages.
+- type: language
+  id: RobotTalk
+  isVisibleLanguage: true
+  speech:
+    fontId: Monospace
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 10 # Crazy
+    replacement:
+    - 0
+    - 1
+
+# Example of a sign language. Used by the Sign Language trait.
+- type: language
+  id: Sign
+  speech:
+    allowRadio: false
+    requireSpeech: false
+    color: "#dddddd"
+    messageWrapOverrides:
+      Speak: chat-sign-language-message-wrap
+      Whisper: chat-sign-language-whisper-wrap
+    speechVerbOverrides:
+    - chat-speech-verb-sign-1
+    - chat-speech-verb-sign-2
+    - chat-speech-verb-sign-3
+  obfuscation:
+    !type:ReplacementObfuscation
+    replacement:
+    - something
+    - a cryptic message
+    - a signal
+    - a message
+
+    #Used for Xenoglossy, and anything else with the UniversalLanguageSpeaker component
+- type: language
+  id: Psychomantic
+  speech:
+    color: "#C29EFF" # a nice psychic purple, a bit lighter than Ya'ssa
+    fontId: Megrim # Experimental and alien, but still hopefully clean enough to read
+    speechVerbOverrides:
+    - chat-speech-verb-Psychomantic-1
+    - chat-speech-verb-Psychomantic-2
+    - chat-speech-verb-Psychomantic-3
+    - chat-speech-verb-Psychomantic-4
+  obfuscation:
+    !type:ReplacementObfuscation
+    replacement:
+    - "*incomprehensible*" # Never actually used
